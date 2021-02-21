@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Controllers;
-use CodeIgniter\RESTful\ResourceController;
+use CodeIgniter\Controller;
 use App\Models\LojaModel;
+use CodeIgniter\API\ResponseTrait;
 
-class Loja extends ResourceController{
+class Loja extends Controller {
 
-    protected $modelName = 'App\Models\LojaModel';
-    protected $format = 'json';
+    use ResponseTrait;
 
     //Mostrar todos produtos
     public function index(){

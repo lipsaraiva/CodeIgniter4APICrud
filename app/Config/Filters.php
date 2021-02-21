@@ -16,9 +16,10 @@ class Filters extends BaseConfig
 	 * @var array
 	 */
 	public $aliases = [
-		'csrf'     => CSRF::class,
-		'toolbar'  => DebugToolbar::class,
-		'honeypot' => Honeypot::class,
+		'csrf'     		=> CSRF::class,
+		'toolbar'  		=> DebugToolbar::class,
+		'honeypot' 		=> Honeypot::class,
+		'oauthfilter' 	=> \App\Filters\Oauth2Filter::class
 	];
 
 	/**
@@ -58,5 +59,7 @@ class Filters extends BaseConfig
 	 *
 	 * @var array
 	 */
-	public $filters = [];
+	public $filters = [
+		'oauthfilter' => ['before' => ['loja', 'loja/*']]
+	];
 }
